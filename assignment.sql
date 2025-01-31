@@ -37,4 +37,14 @@ INSERT INTO courses(Course_name,Professor_id)VALUES
 ('Science',2),
 ('History',3),
 ('Art',NULL);
-urses INNER JOIN professors on professors.professor_id = courses.professor_idSelect course_name,name from courses INNER JOIN professors on professors.professor_id = courses.professor_idSelect course_name,name from co
+Select course_name,name from courses INNER JOIN professors on professors.professor_id = courses.professor_id;
+Select course_name,name from courses LEFT JOIN professors on professors.professor_id = courses.professor_id;
+CREATE TABLE Departments(
+department_id SERIAL PRIMARY KEY,
+professor_id INT REFERENCES professors(professor_id)
+);
+SELECT * from professors INNER JOIN departments on professors.professor_id = departments.professor_id;
+SELECT * from professors LEFT JOIN departments on professors.professor_id = departments.professor_id;
+SELECT * FROM professors,departments;
+
+SELECT * from professors LEFT JOIN departments on professors.professor_id = departments.professor_id;
